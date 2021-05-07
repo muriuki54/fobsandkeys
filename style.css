@@ -1,0 +1,361 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.welcome_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: #000;
+    transform-origin: center;
+    z-index: 999;
+}
+
+.welcome_overlay h1 {
+    position: absolute;
+    top: 50%;
+    font-size: 4rem;
+    color: #fff;
+}
+
+.welcome_overlay svg {
+    position: absolute;
+    top: 0%;
+    transform: translateY(-50%);
+    width: 200px;
+    height: 50vh;
+}
+
+#unlock {
+    -webkit-box-shadow: 3px -2px 27px 6px rgba(68,141,250,1);
+    -moz-box-shadow: 3px -2px 27px 6px rgba(68,141,250,1);
+    box-shadow: 3px -2px 27px 6px rgba(68,141,250,1);
+}
+
+/* HERO SECTION */
+
+#hero {
+    height: 60vh;
+    position: relative;
+    display: flex;
+    z-index: 1;
+}
+
+.hero_content {
+    position: absolute;
+    background: rgb(0, 0, 0, 40%);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: #fff;
+}
+
+#hero .polygon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top left;
+}
+
+.polygon_1 {
+    flex: 1;
+    /* clip-path: polygon(0 0, 100% 0, 70% 100%, 0% 100%); */
+}
+
+.polygon_2 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    width: 50%;
+    transform: translateX(-50%);
+    clip-path: polygon(20% 0, 100% 0, 80% 100%, 0% 100%);
+}
+
+.polygon_3 {
+    flex: 1;
+    /* clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%); */
+}
+
+/* who are we */
+
+#about {
+    width: 100%;
+    position: relative;
+}
+
+.who_image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 1px solid #eeeeee;
+    position: relative;
+    background: #fff;
+    /* animation: shake linear infinite;
+    animation-duration: 20s; */
+}
+
+.who_image img {
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+/* @keyframes shake {
+    0% {
+        transform: translate(0px);
+    }  
+    
+    25% {
+        transform: translate(-40px);
+    }
+
+    75% {
+        transform: translateX(-20px);
+    }
+
+    100% {
+        transform: translate(0px);
+    }
+} */
+
+.who_image_shadow {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    background-image: linear-gradient(to right, rgb(58, 58, 58), transparent);
+    opacity: 0.2;
+    transform: rotate(0deg);
+    transform-origin: left;
+    z-index: -1;
+    animation: rotate linear infinite;
+    animation-duration: 30s;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }  
+    
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.dot {
+    position: absolute;
+    border-radius: 50%;
+    z-index: -999;
+    animation: animate linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    10% {opacity: 1;}
+    90% {opacity: 1;}
+    100% {
+        opacity: 1;
+        transform: translateY(-2000%);
+    }
+}
+
+.dot:nth-child(odd) {
+    background: rgb(236, 27, 27);
+}
+.dot:nth-child(even) {
+    background: transparent;
+    border: 1px solid rgb(255, 42, 42);
+}
+
+.what {
+    z-index: 2;
+}
+
+.what > div {
+    padding: 0;
+    display: flex;
+}
+.what_desc {
+    background: #0F8AC0;
+    margin: 30px;
+}
+
+.what img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    object-position: center;
+    background-color: #fff;
+    border: 1px solid #083446;
+}
+
+/* SERVICES */
+
+#services {
+    background: #0F8AC0;
+}
+
+#services img {
+    object-fit: cover;
+    object-position: center;
+}
+#services .row_grid .row_grid_item {
+    position: relative;
+    padding: 5px;
+}
+
+.row_grid h3 {
+    text-transform: uppercase;
+}
+#services .service_desc {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0));
+    color: #fff;
+    padding: 10px 20px 30px 10px;
+    margin: 5px;
+}
+.row_grid_items_small img {
+    width: 100%;
+    height: 250px;
+}
+
+.row_grid_item_large img {
+    width: 100%;
+    height: 500px;
+}
+
+#services .cta {
+    background: #083446;
+    height: 250px;
+    color: #fff;
+    display: grid;
+    place-content: center;
+}
+
+
+/* contact */
+
+#contact {
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(12,22,59,1) 68%, rgba(255,255,255,1) 100%);    position: relative;
+}
+
+#contact .dot {
+    z-index: 1;
+}
+#contact .dot:nth-child(odd) {
+    background: #fff;
+}
+#contact .dot:nth-child(even) {
+    background: transparent;
+    border: 1px solid #fff;
+}
+.map {
+    background: #0F8AC0;
+    color: #fff;
+    text-align: center;
+}
+.map .fas {
+    font-size: 50px;
+}
+
+.contact_form {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* footer */
+
+footer {
+    padding: 10px;
+    background: #083446;
+    color: #fff;
+}
+.footer-top {
+    display: flex;
+    justify-content: space-evenly;
+}
+.footer-top div {
+    flex: 1;
+}
+.footer-contact-icons, .footer-privacy-policy {
+    border-right: 1px solid #fff;
+}
+.footer-contact-icons p {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-contact-icons .fa {
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    border: 2px solid #fff;
+    background: #083446;
+    color:#fff;
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease-in-out;
+}
+footer a { 
+    color: #fff !important;
+}
+.footer-contact-icons .fa:hover {
+    background: #07668b;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.footer-privacy-policy, .footer-logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+ 
+.footer-bottom {
+    background: rgb(197, 197, 197);
+}
+
+
+@media(max-width: 768px) {
+    
+    #hero {
+        flex-direction: column;
+        height: auto;
+    }
+    .polygon_2 {
+        display: none;
+    }
+    
+}
